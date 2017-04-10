@@ -30,8 +30,15 @@ $(NAME) : $(OBJ)
 
 clean :
 	rm -f $(OBJ)
+	rm test.o
 
 fclean : clean
 	rm -f $(NAME)
+	rm test
+
+test: $(NAME)
+	gcc -Wall -Werror -Wextra -c test.c
+	gcc -Wall -Werror -Wextra *.o -o test
+	./test
 
 re : fclean all
