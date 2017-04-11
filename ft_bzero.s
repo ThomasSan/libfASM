@@ -1,32 +1,17 @@
-%define MACH_SYSCALL(nb) 0x2000000 | nb
-
-section .data
-hello:
-	.string db "Hello World!", 10
-	.len equ $ - hello.string
+; Notes :
+; - Les 6 premiers parametres sont stockes dans les registres rdi, rsi, rdx, rcx, r8, r9
 
 section .text
-	global start
-	global _main 
-	extern _printf
+	global _ft_bzero
 
-start:
-	xor eax, eax
-	mov ecx, 10
-	call _main
-	ret
+_ft_bzero:
+	cmp rsi, 0				; if i != 0
+	jz end					; return;
+	mov byte [rdi], 0		;{
+	inc rdi					;
+	dec rsi					; n--
+	jmp _ft_bzero			;	b_zero
+	ret						;}
 
-_main:
-	inc eax
-	;push rbp
-	;mov rbp, rsp
-	;sub rsp, 16
-	;mov rdi, 1
-	;mov rdx, hello.len
-	;lea rsi, [rel hello.string]
-	;mov rax, MACH_SYSCALL(4)
-	;syscall
-	;leave
-
-	loop _main
+end:
 	ret

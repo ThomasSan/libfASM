@@ -13,9 +13,10 @@
 .PHONY : clean, fclean, re, test
 .SUFFIXES :
 
-NAME = libftasm.a
+NAME = libfts.a
 
-SRC = ft_isascii.s ft_isalpha.s ft_isdigit.s
+SRC = ft_isascii.s ft_isalpha.s ft_isalnum.s ft_isdigit.s ft_isprint.s ft_bzero.s\
+	  ft_strcat.s
 
 OBJ = $(SRC:.s=.o)
 
