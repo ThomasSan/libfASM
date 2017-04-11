@@ -58,6 +58,19 @@ int		test_isX(int f(int), int of(int), char *s)
 	return (0);
 }
 
+void	test_puts(void)
+{
+	size_t len1;
+	size_t len2;
+
+	if ((len1 = ft_puts("Hello World!")) != (len2 = puts("Hello World!")))
+		printf("Err with return Value on ft_puts('Hello World!')  %zu => %zu\n", len1, len2);
+	if ((len1 = ft_puts("")) != (len2 = puts("")))
+		printf("Err with return Value on ft_puts('') %zu => %zu\n", len1, len2);
+	if ((len1 = ft_puts(NULL)) != (len2 = puts(NULL)))
+		printf("Err with return Value on ft_puts(NULL) %zu => %zu\n", len1, len2);
+}
+
 int		main(void)
 {
 	char *str;
@@ -65,6 +78,7 @@ int		main(void)
 	char str2[20];
 	int	len;
 
+	printf("<--------------- Tests ft_is() ------------------->\n");
 	test_isX(ft_isascii, isascii, "ft_isascii");
 	test_isX(ft_isalpha, isalpha, "ft_isalpha");
 	test_isX(ft_isprint, isprint, "ft_isprint");
@@ -79,6 +93,19 @@ int		main(void)
 	strcpy(str2, "ta soeur");
 	ft_strcat(str1, str2);
 	printf("%s\n", str1);
+
+	printf("<--------------- Tests ft_to() ------------------->\n");
+	test_isX(ft_toupper, toupper, "ft_toupper");
+	test_isX(ft_tolower, tolower, "ft_tolower");
+
+	printf("<--------------- Tests ft_puts() ------------------->\n");
+	test_puts();
+
+	printf("<--------------- Tests ft_strlen() ------------------->\n");
+
+	printf("strlen(Hello World!) = %zu -> %zu\n", ft_strlen("Hello World!"), strlen("Hello World!"));
+	printf("strlen() = %zu -> %zu\n", ft_strlen(""), strlen(""));
+
 
 	return (0);
 }
