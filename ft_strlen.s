@@ -5,16 +5,11 @@ section .text
 	global _ft_strlen
 
 _ft_strlen:
-	mov r10, rdi
-	mov rbx, rdi
-
-count_char:
-	cmp byte [rbx], 0		; if s[i] == 0
-	jz end					; 	return;
-	inc rbx					;
-	jmp count_char
-
-end:
-	mov rax, rbx
-	sub rax, r10
-	ret
+	mov r10, rdi	;	start = str
+	mov al, 0		;	c = '\0'
+	mov rcx, 0xFFFFFFFFFFFFFFFF
+	repne scasb		;	while (*str != c) str++
+	dec rdi			; 	str--;
+	mov rax, rdi	;	ret = str;
+	sub rax, r10	;	ret - start;
+	ret				;	return ret

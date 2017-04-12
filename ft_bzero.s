@@ -5,7 +5,7 @@ section .text
 	global _ft_bzero
 
 _ft_bzero:
-	cmp rsi, 0				; if i != 0
+	cmp rsi, 0				; if n != 0
 	jz end					; return;
 	mov byte [rdi], 0		;{
 	inc rdi					;

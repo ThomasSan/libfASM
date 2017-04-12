@@ -14,5 +14,4 @@ _ft_isprint:
 	ret					;}
 
 ft_exit:
-	leave
 	ret

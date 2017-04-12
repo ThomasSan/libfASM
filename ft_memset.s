@@ -6,14 +6,9 @@ section .text
 	global _ft_memset
 
 _ft_memset:
-	cmp rdx, 0				; if i != 0
-	jz end					; return;
-	mov byte [bx], rsi
-	mov byte [rdi], bx		;{
-	inc rdi					;
-	dec rdx					; n--
-	jmp _ft_memset			;	b_zero
+	mov r10, rdi
+	mov rax, rsi			; rax = c
+	mov rcx, rdx			; i = len
+	rep	stosb				; while (i) b[i] = rax; i--;
+	mov rax, r10
 	ret						;}
-
-end:
-	ret
