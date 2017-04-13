@@ -9,6 +9,9 @@ int		ft_isalpha(int c);
 int		ft_isprint(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
+int		ft_isupper(int c);
+int		ft_islower(int c);
+int		ft_isspace(int c);
 
 int		ft_tolower(int c);
 int		ft_toupper(int c);
@@ -25,4 +28,5 @@ size_t	ft_strlen(char *s);
 void	ft_memset(void *b, int c, size_t len);
 void	*ft_memcpy(void *b, void *c, size_t len);
 
+char	*ft_strchr(char *s, int c);
 #endif

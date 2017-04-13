@@ -17,7 +17,8 @@ NAME = libfts.a
 
 SRC = ft_isascii.s ft_isalpha.s ft_isalnum.s ft_isdigit.s ft_isprint.s ft_bzero.s\
 	  ft_strcat.s ft_tolower.s ft_toupper.s ft_puts.s ft_strlen.s ft_memset.s \
-	  ft_memcpy.s ft_strdup.s ft_cat.s
+	  ft_memcpy.s ft_strdup.s ft_cat.s ft_islower.s ft_isupper.s ft_isspace.s \
+	  ft_strchr.s
 
 OBJ = $(SRC:.s=.o)
 
@@ -38,7 +39,7 @@ fclean : clean
 
 test: $(NAME)
 	gcc -Wall -Werror -Wextra -c test.c
-	gcc -Wall -Werror -Wextra *.o -o test
+	gcc -Wall -Werror -Wextra $(OBJ) test.o -o test
 	./test
 
 re : fclean all

@@ -5,11 +5,11 @@ section .text
 	global _ft_toupper
 
 _ft_toupper:
-	cmp byte rdi, 'a'
+	cmp rdi, 'a'
 	jl end			; 
-	cmp byte rdi, 'z'
+	cmp rdi, 'z'
 	jg end			; 
-	sub byte rdi, 32
+	sub rdi, 32
 
 end:
 	mov rax, rdi

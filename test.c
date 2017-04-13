@@ -68,6 +68,9 @@ int		main(void)
 	test_isX(ft_isprint, isprint, "ft_isprint");
 	test_isX(ft_isalnum, isalnum, "ft_isalnum");
 	test_isX(ft_isdigit, isdigit, "ft_isdigit");
+	test_isX(ft_isupper, isupper, "ft_isupper");
+	test_isX(ft_islower, islower, "ft_islower");
+	test_isX(ft_isspace, isspace, "ft_isspace");
 	
 	printf("<--------------- Tests ft_bzero() ------------------->\n");
 	str = strdup("Hello World!\n");	
@@ -94,13 +97,13 @@ int		main(void)
 	printf("strlen(Hello World!) = %zu -> %zu\n", ft_strlen("Hello World!"), strlen("Hello World!"));
 	printf("strlen() = %zu -> %zu\n", ft_strlen(""), strlen(""));
 
-	printf("<--------------- Tests ft_memcpy() ------------------->\n");
-
-	//printf("ft_memcpy('tatatatatat', 'Mabite', 6) = %s\n", ft_memcpy("tatatatatat", "Mabite", 6));
-
 	printf("<--------------- Tests ft_strdup() ------------------->\n");
 
 	printf("ft_strdup(Hello World!) = %s\n", ft_strdup("Hello World!"));
 
+	printf("<--------------- Tests ft_strdup() ------------------->\n");
+	printf("Mon strchr %s, %s\n", ft_strchr(str1, 'o'), strchr(str1, 'o'));
+	printf("Mon strchr %s, %s\n", ft_strchr(str1, 'z'), strchr(str1, 'z'));
+	printf("Mon strchr %s, %s\n", ft_strchr(str1, 0), strchr(str1, 0));
 	return (0);
 }

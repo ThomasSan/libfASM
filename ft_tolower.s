@@ -5,11 +5,11 @@ section .text
 	global _ft_tolower
 
 _ft_tolower:
-	cmp byte rdi, 'A'
+	cmp rdi, 'A'
 	jl end			; 
-	cmp byte rdi, 'Z'
+	cmp rdi, 'Z'
 	jg end			; 
-	add byte rdi, 32
+	add rdi, 32
 
 end:
 	mov rax, rdi
