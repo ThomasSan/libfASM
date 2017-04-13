@@ -15,6 +15,8 @@ section	.text
 	extern _read
 
 _ft_cat:
+	push rbp
+	mov rbp, rsp
 	push rbx
 	mov rbx, rdi
 

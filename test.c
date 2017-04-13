@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <fcntl.h>
 #include "libftasm.h"
 
 int		s_len(char *s)
@@ -115,5 +116,13 @@ int		main(void)
 
 	printf("<--------------- Tests ft_puts() ------------------->\n");
 	test_puts_fd(2);
+	
+
+	printf("<--------------- Tests ft_puts() ------------------->\n");
+	int fd;
+
+	fd = open("ft_puts.s", O_RDONLY);
+	ft_cat(fd);
+	close(fd);
 	return (0);
 }

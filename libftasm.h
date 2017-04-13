@@ -16,6 +16,8 @@ int		ft_isspace(int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 
+void	ft_cat(int fd);
+
 void	ft_bzero(void *s, size_t n);
 
 char	*ft_strcat(char *dst, char *src);
