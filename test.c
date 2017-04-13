@@ -55,6 +55,13 @@ void	test_puts(void)
 		printf("Err with return Value on ft_puts(NULL) %zu => %zu\n", len1, len2);
 }
 
+void	test_puts_fd(int fd)
+{
+	ft_puts_fd("Hello World!", fd);
+	ft_puts_fd("", fd);
+	ft_puts_fd(NULL, fd);
+}
+
 int		main(void)
 {
 	char *str;
@@ -105,5 +112,8 @@ int		main(void)
 	printf("Mon strchr %s, %s\n", ft_strchr(str1, 'o'), strchr(str1, 'o'));
 	printf("Mon strchr %s, %s\n", ft_strchr(str1, 'z'), strchr(str1, 'z'));
 	printf("Mon strchr %s, %s\n", ft_strchr(str1, 0), strchr(str1, 0));
+
+	printf("<--------------- Tests ft_puts() ------------------->\n");
+	test_puts_fd(2);
 	return (0);
 }

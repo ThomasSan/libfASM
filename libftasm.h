@@ -22,6 +22,7 @@ char	*ft_strcat(char *dst, char *src);
 char	*ft_strdup(char *src);
 
 int		ft_puts(char *s);
+int		ft_puts_fd(char *s, int fd);
 
 size_t	ft_strlen(char *s);
 
